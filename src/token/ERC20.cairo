@@ -22,12 +22,8 @@ mod People {
     }
 
     #[constructor]
-    fn constructor(
-        ref self: ContractState,
-        recipient: ContractAddress,
-        fixed_supply: u256
-    ) {
+    fn constructor(ref self: ContractState, recipient: ContractAddress, fixed_supply: u256) {
         self.erc20.initializer("ZKPeople", "ZKP");
         self.erc20._mint(recipient, fixed_supply);
-    }   
+    }
 }
